@@ -43,7 +43,7 @@ else:
 img_array = np.array(image.resize((224, 224))) / 255.0
 img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
 
-st.write("Image shape before prediction: ", img_array.shape)
+# st.write("Image shape before prediction: ", img_array.shape)
 # Make predictions
 prediction = model.predict(img_array)
 
