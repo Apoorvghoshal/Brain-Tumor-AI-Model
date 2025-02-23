@@ -3,8 +3,11 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 # Load the trained model
-model = tf.keras.models.load_model('densenet121_finetuned.h5')
+model = tf.keras.models.load_model('densenet121_finetuned.h5', compile=False)
 
 # Class labels in the order your model outputs predictions
 class_labels = ['Glioma', 'Pituitary', 'Meningioma', 'No Tumor']
@@ -40,6 +43,7 @@ else:
 img_array = np.array(image.resize((224, 224))) / 255.0
 img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
 
+st.write("Image shape before prediction: ", img_array.shape)
 # Make predictions
 prediction = model.predict(img_array)
 
