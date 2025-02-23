@@ -52,5 +52,3 @@ st.write(f"Confidence: {confidence:.2f}")
 
 # Debug output (optional)
 # st.write(f"Raw prediction: {prediction}")
-git config --global user.name "apoorv_ghoshal"
-git config --global user.email "apoorvghoshal03@gmail.com"
