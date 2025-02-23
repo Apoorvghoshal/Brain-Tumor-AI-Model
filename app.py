@@ -52,7 +52,7 @@ predicted_class = np.argmax(prediction)
 confidence = np.max(prediction)
 
 st.write(f"Prediction: **{class_labels[predicted_class]}**")
-st.write(f"Confidence: {confidence:.2f}")
+st.write(f"Confidence: {100*confidence:.2f}%")
 
 # Debug output (optional)
 # st.write(f"Raw prediction: {prediction}")
